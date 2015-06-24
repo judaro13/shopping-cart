@@ -1,0 +1,115 @@
+#sidebar.span3
+  = render 'shared/sidebar_cart'
+  %ul#sideManu.nav.nav-tabs.nav-stacked
+    %li.subMenu.open
+      %a ELECTRONICS [230]
+      %ul
+        %li
+          %a.active{:href => "products.html"}
+            %i.icon-chevron-right>
+            Cameras (100)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Computers, Tablets & laptop (30)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Mobile Phone (80)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Sound & Vision (15)
+    %li.subMenu
+      %a CLOTHES [840]
+      %ul{:style => "display:none"}
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Women's Clothing (45)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Women's Shoes (8)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Women's Hand Bags (5)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Men's Clothings  (45)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Men's Shoes (6)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Kids Clothing (5)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Kids Shoes (3)
+    %li.subMenu
+      %a FOOD AND BEVERAGES [1000]
+      %ul{:style => "display:none"}
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Angoves  (35)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Bouchard Aine & Fils (8)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            French Rabbit (5)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Louis Bernard  (45)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            BIB Wine (Bag in Box) (8)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Other Liquors & Wine (5)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Garden (3)
+        %li
+          %a{:href => "products.html"}
+            %i.icon-chevron-right>
+            Khao Shong (11)
+    %li
+      %a{:href => "products.html"} HEALTH & BEAUTY [18]
+    %li
+      %a{:href => "products.html"} SPORTS & LEISURE [58]
+    %li
+      %a{:href => "products.html"} BOOKS & ENTERTAINMENTS [14]
+
+  -@deals.each do |k,v|
+    %br/
+    .thumbnail
+      =image_tag v[:url], alt:  v[:alt]
+      .caption
+        %h5
+          =k
+        %h4{:style => "text-align:center"}
+          %a.btn{:href => "product_details.html"}
+            %i.icon-zoom-in
+          %a.btn{:href => "#"}
+            Add to
+            %i.icon-shopping-cart
+          %a.btn.btn-primary{:href => "#"}
+            =v[:price]
+  %br/
+  .thumbnail
+    =image_tag 'payment_methods.png', alt: 'Payments Methods', title: 'Bootshop Payment Methods'
+    .caption
+      %h5 Payment Methods

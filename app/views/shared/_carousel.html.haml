@@ -1,0 +1,20 @@
+#carouselBlk
+  #myCarousel.carousel.slide
+    .carousel-inner
+      .item.active
+        .container
+          = link_to 'register' do 
+            =image_tag 'carousel/1.png', alt: 'special offers', style: 'width:100%'
+          .carousel-caption
+            %h4 Second Thumbnail label
+            %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+      -(2..6).each do |item|
+        .item
+          .container
+            = link_to 'register' do 
+              =image_tag "carousel/#{item}.png", alt: 'special offers', style: 'width:100%'
+            .carousel-caption
+              %h4 Second Thumbnail label
+              %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"} ‹
+    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"} ›

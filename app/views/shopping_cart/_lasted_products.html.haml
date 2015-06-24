@@ -1,0 +1,18 @@
+%h4 Latest Products
+%ul.thumbnails
+  - (6..11).each do |item|  
+    %li.span3
+      .thumbnail
+        = link_to 'product_detail' do 
+          = image_tag "products/#{item}.jpg"
+        .caption
+          %h5 Product name
+          %p
+            Lorem Ipsum is simply dummy text.
+          %h4{:style => "text-align:center"}
+            %a.btn{:href => "product_details.html"}
+              %i.icon-zoom-in
+            %a.btn{:href => "#"}
+              Add to
+              %i.icon-shopping-cart
+            %a.btn.btn-primary{:href => "#"} $222.00
