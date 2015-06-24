@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
 
   def day_deals
     @deals = {'panasonic': {url: 'products/panasonic.jpg', price: 400, alt: 'Bootshop panasonoc New camera'}, 'kindle': {url: 'products/kindle.png',  price: 200, alt: 'Bootshop Kindel'}}
-
   end
 
 end

@@ -17,121 +17,20 @@
                   %h4
                     %a.btn{:href => "product_details.html"} VIEW
                     %span.pull-right $222.00
-      .item
-        %ul.thumbnails
-          %li.span3
-            .thumbnail
-              %i.tag
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/5.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %i.tag
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/6.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/7.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/8.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-      .item
-        %ul.thumbnails
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/9.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/10.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/11.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/1.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-      .item
-        %ul.thumbnails
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/2.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/3.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/4.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
-          %li.span3
-            .thumbnail
-              %a{:href => "product_details.html"}
-                %img{:alt => "", :src => "themes/images/products/5.jpg"}/
-              .caption
-                %h5 Product name
-                %h4
-                  %a.btn{:href => "product_details.html"} VIEW
-                  %span.pull-right $222.00
+      -(1..11).each_slice(4) do |group|
+        .item
+          %ul.thumbnails
+            -group.each do |item|
+              %li.span3
+                .thumbnail
+                  %i.tag
+                  =link_to 'product_detail' do 
+                    =image_tag "products/#{item}.jpg"
+                  .caption
+                    %h5 Product name
+                    %h4
+                      %a.btn{:href => "product_details.html"} VIEW
+                      %span.pull-right $222.00
+          
     %a.left.carousel-control{"data-slide" => "prev", :href => "#featured"} ‹
     %a.right.carousel-control{"data-slide" => "next", :href => "#featured"} ›

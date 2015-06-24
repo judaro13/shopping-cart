@@ -24,10 +24,10 @@
         %a{:href => "#"} SUPPLIERS
       #socialMedia.span3.pull-right
         %h5 SOCIAL MEDIA
-        %a{:href => "#"}
-          %img{:alt => "facebook", :height => "60", :src => "themes/images/facebook.png", :title => "facebook", :width => "60"}/
-        %a{:href => "#"}
-          %img{:alt => "twitter", :height => "60", :src => "themes/images/twitter.png", :title => "twitter", :width => "60"}/
-        %a{:href => "#"}
-          %img{:alt => "youtube", :height => "60", :src => "themes/images/youtube.png", :title => "youtube", :width => "60"}/
+        = link_to '#' do
+          = image_tag 'facebook.png', height: 60, width: 60, title: 'facebook'
+        = link_to '#' do
+          = image_tag 'twitter.png', height: 60, width: 60, title: 'twitter'
+        = link_to '#' do
+          = image_tag 'youtube.png', height: 60, width: 60, title: 'youtube'
     %p.pull-right © Bootshop

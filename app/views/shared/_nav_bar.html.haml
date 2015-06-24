@@ -4,8 +4,8 @@
     %span.icon-bar
     %span.icon-bar
   .navbar-inner
-    %a.brand{:href => "index.html"}
-      %img{:alt => "Bootsshop", :src => "themes/images/logo.png"}/
+    = link_to root_path, class: 'brand' do
+      = image_tag 'logo.png', alt: 'Boots'
     %form.form-inline.navbar-search{:action => "products.html", :method => "post"}
       %input#srchFld.srchTxt{:type => "text"}/
       %select.srchTxt
