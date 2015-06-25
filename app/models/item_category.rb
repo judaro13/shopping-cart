@@ -11,4 +11,11 @@ class ItemCategory
   validates_presence_of :name 
   validates_uniqueness_of :name
   validates_numericality_of :count
+
+  before_update :update_parent, if: Proc.new { |itemCat| itemCat.count_changed? }
+
+  def update_parent
+    return unless self.parent
+    self.parent.inc(count: 1)
+  end
 end
