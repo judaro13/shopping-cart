@@ -22,7 +22,7 @@ namespace :items do
           end
 
           Item.create(name: Faker::Commerce.product_name, 
-            img: "products/#{rand(1..11)}.jpg",
+            img: "products/#{rand(1..19)}.jpg",
             item_category: category,
             stock: rand(1..10),
             custom_options: [Faker::Commerce.color, Faker::Commerce.color],
