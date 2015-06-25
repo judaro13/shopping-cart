@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :day_deals
 
   def day_deals
-    @deals = {'panasonic': {url: 'products/panasonic.jpg', price: 400, alt: 'Bootshop panasonoc New camera'}, 'kindle': {url: 'products/kindle.png',  price: 200, alt: 'Bootshop Kindel'}}
+    @deals = [Item.first, Item.last]
+    @feature_products = Item.all.limit(16)
   end
 
 end

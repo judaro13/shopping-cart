@@ -1,18 +1,20 @@
 %h4 Latest Products
 %ul.thumbnails
-  - (6..11).each do |item|  
+  - @lasted_products.each do |item|  
     %li.span3
       .thumbnail
         = link_to 'product_detail' do 
-          = image_tag "products/#{item}.jpg"
+          = image_tag item.img
         .caption
-          %h5 Product name
+          %h5
+            = truncate(item.name, :length => 20)
           %p
-            Lorem Ipsum is simply dummy text.
+            = truncate(item.description, :length => 25)
           %h4{:style => "text-align:center"}
             %a.btn{:href => "product_details.html"}
               %i.icon-zoom-in
             %a.btn{:href => "#"}
               Add to
               %i.icon-shopping-cart
-            %a.btn.btn-primary{:href => "#"} $222.00
+            %a.btn.btn-primary{:href => "#"} 
+              = "$#{item.price}"

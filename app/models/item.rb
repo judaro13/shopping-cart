@@ -19,6 +19,6 @@ class Item
   before_create  :update_counter
 
   def update_counter
-    self.item_category.inc(count: 1)
+    self.item_category.update(count: self.item_category.count+1)
   end
 end
