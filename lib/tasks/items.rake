@@ -22,14 +22,15 @@ namespace :items do
           end
 
           Item.create(name: Faker::Commerce.product_name, 
-            img: "products/#{rand(1..11)}.jpg",
+            img: "products/#{rand(1..19)}.jpg",
             item_category: category,
             stock: rand(1..10),
             custom_options: [Faker::Commerce.color, Faker::Commerce.color],
             description: Faker::Lorem.paragraph(4),
             item_detail: item_detail,
             features: Faker::Lorem.paragraph(4),
-            editorial_review: editorial_review
+            editorial_review: editorial_review,
+            price: rand(5..300)
             )
           print "."
         end

@@ -9,6 +9,7 @@ class Item
   field :features,        type: String
   field :editorial_review, type: Hash, default: {}
   field :img,              type: String
+  field :price,            type: Float
 
   belongs_to :item_category
 
