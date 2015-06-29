@@ -1,0 +1,41 @@
+.control-group
+  %label.control-label
+    Title
+    %sup *
+  .controls
+    = f.select :title, select_title_values, class: 'span1'
+.control-group
+  .control-label
+    = f.label :first_name do
+      First name
+      %sup *
+  .controls
+    = f.text_field :first_name, placeholder: 'First name'
+.control-group
+  .control-label
+    = f.label :last_name do
+      Last name
+      %sup *
+  .controls
+    = f.text_field :last_name, placeholder: 'Last name'
+.control-group
+  .control-label
+    = f.label :email do
+      Email
+      %sup *
+  .controls
+    = f.email_field :email, autofocus: true, placeholder: 'Email'
+.control-group
+  .control-label
+    = f.label :password do
+      Password
+      %sup *
+  .controls
+    = f.password_field :password, autocomplete: "off"
+.control-group
+  .control-label
+    = f.label :password_confirmation do
+      Password confirmation
+      %sup *
+  .controls
+    = f.password_field :password_confirmation, autocomplete: "off"

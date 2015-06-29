@@ -24,21 +24,15 @@
       %li
         %a{:href => "contact.html"} Contact
       %li
-        %a{"data-toggle" => "modal", :href => "#login", :role => "button", :style => "padding-right:0"}
-          %span.btn.btn-large.btn-success Login
-        #login.modal.hide.fade.in{"aria-hidden" => "false", "aria-labelledby" => "login", :role => "dialog", :tabindex => "-1"}
-          .modal-header
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-            %h3 Login Block
-          .modal-body
-            %form.form-horizontal.loginFrm
-              .control-group
-                %input#inputEmail{:placeholder => "Email", :type => "text"}/
-              .control-group
-                %input#inputPassword{:placeholder => "Password", :type => "password"}/
-              .control-group
-                %label.checkbox
-                  %input{:type => "checkbox"}/
-                  Remember me
-            %button.btn.btn-success{:type => "submit"} Sign in
-            %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+        - if user_signed_in?
+          = link_to destroy_user_session_path, :method => :delete do
+            %span.btn.btn-large.btn-success Logout
+        -else 
+          %a{"data-toggle" => "modal", :href => "#login", :role => "button", :style => "padding-right:0"}
+            %span.btn.btn-large.btn-success Login
+          #login.modal.hide.fade.in{"aria-hidden" => "false", "aria-labelledby" => "login", :role => "dialog", :tabindex => "-1"}
+            .modal-header
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+              %h3 Login Block
+            .modal-body
+              = render 'shared/login'

@@ -1,0 +1,82 @@
+.control-group
+  .control-label
+    = f.label :first_name do
+      First name
+      %sup *
+  .controls
+    = f.text_field :first_name, placeholder: 'First name'
+.control-group
+  .control-label
+    = f.label :last_name do
+      Last name
+      %sup *
+  .controls
+    = f.text_field :last_name, placeholder: 'Last name'
+.control-group
+  .control-label
+    = f.label :company
+  .controls
+    = f.text_field :company, placeholder: 'Company'
+.control-group
+  .control-label
+    = f.label :address do
+      Address
+      %sup *
+  .controls
+    = f.text_field :address, placeholder: 'Address'
+    %span Street address, P.O. box, company name, c/o
+.control-group
+  .control-label
+    = f.label :address_complement do
+      Address (Line 2)
+      %sup *
+  .controls
+    = f.text_field :address_complement, placeholder: 'Address line '
+    %span Apartment, suite, unit, building, floor, etc.
+.control-group
+  .control-label
+    = f.label :city do
+      City
+      %sup *
+  .controls
+    = f.text_field :city, placeholder: 'City'
+.control-group
+  .control-label
+    = f.label :state do
+      State
+      %sup *
+  .controls
+    = f.text_field :state, placeholder: 'State'
+.control-group
+  .control-label
+    = f.label :zip_code do
+      Zip / Postal Code
+      %sup *
+  .controls
+    = f.text_field :zip_code, placeholder: 'zip / postal code'
+.control-group
+  .control-label
+    = f.label :country do
+      Country
+      %sup *
+  .controls
+    = f.text_field :country, placeholder: 'Country'
+
+.control-group
+  %label.control-label{:for => "aditionalInfo"} Additional information
+  .controls
+    %textarea#aditionalInfo{:cols => "26", :name => "aditionalInfo", :rows => "3"} Additional information
+.control-group
+  .control-label
+    = f.label :home_phone do
+      Home phone
+      %sup *
+  .controls
+    = f.text_field :home_phone, placeholder: 'Home phone'
+    %span You must register at least one phone number
+.control-group
+  .control-label
+    = f.label :movil_phone do
+      Movil phone
+  .controls
+    = f.text_field :movil_phone, placeholder: 'Cellphone'

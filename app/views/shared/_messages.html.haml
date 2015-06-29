@@ -1,0 +1,8 @@
+- flash.each do |name, msg|
+  .alert.alert-block.fade.in{class: "alert-#{name}"}
+    %button.close{"data-dismiss" => "alert", :type => "button"} ×
+    - if msg.class == Array
+      - msg.each do |message|
+        = content_tag :div, message, :id => "flash_#{name}"
+    - else
+      = content_tag :div, msg, :id => "flash_#{name}"

@@ -3,7 +3,7 @@
     .carousel-inner
       .item.active
         .container
-          = link_to 'register' do 
+          = link_to new_user_registration_path do 
             =image_tag 'carousel/1.png', alt: 'special offers', style: 'width:100%'
           .carousel-caption
             %h4 Second Thumbnail label
@@ -11,7 +11,7 @@
       -(2..6).each do |item|
         .item
           .container
-            = link_to 'register' do 
+            = link_to new_user_registration_path do 
               =image_tag "carousel/#{item}.png", alt: 'special offers', style: 'width:100%'
             .carousel-caption
               %h4 Second Thumbnail label

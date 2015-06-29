@@ -3,7 +3,8 @@
     #welcomeLine.row
       .span6
         Welcome!
-        %strong User
+        %strong 
+          =  user_signed_in? ? current_user.first_name : 'User'
       .span6
         .pull-right
           %a{:href => "product_summary.html"}
@@ -22,3 +23,4 @@
               [ 3 ] Itemes in your cart
     
     = render 'shared/nav_bar'
+    = render 'shared/messages'

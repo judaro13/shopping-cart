@@ -23,14 +23,23 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
 
-  ## Confirmable
-  # field :confirmation_token,   type: String
-  # field :confirmed_at,         type: Time
-  # field :confirmation_sent_at, type: Time
-  # field :unconfirmed_email,    type: String # Only if using reconfirmable
 
-  ## Lockable
-  # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
-  # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
-  # field :locked_at,       type: Time
+  field :first_name,         type: String
+  field :last_name,          type: String
+  field :title,              type: String
+  
+  has_one :address
+  has_one :cart
+
+  validates_presence_of :first_name, :last_name, :address
+  accepts_nested_attributes_for :address,  
+    allow_destroy: true
+
+  after_initialize  :build_relations_if_nil
+
+  def build_relations_if_nil
+    self.address = Address.new if address.nil?
+    self.cart = Cart.create if cart.nil?
+  end
+
 end

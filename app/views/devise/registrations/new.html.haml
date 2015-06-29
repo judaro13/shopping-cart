@@ -1,0 +1,25 @@
+.span9
+  %ul.breadcrumb
+    %li
+      = link_to 'Home', root_path
+      %span.divider /
+    %li.active Registration
+  %h3 Registration
+  .well
+    .form-horizontal
+      %h4 Your personal information
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        = render 'devise/registrations/personal_info', f: f
+
+        %h4 Your address
+        =f.fields_for :address do |builder|
+          = render 'devise/registrations/address_info', f: builder
+        %p
+          %sup> *
+          Required field
+        .control-group
+          .controls
+            = f.submit "Sign up", class:  'btn btn-large btn-success'
+
+    = render "devise/shared/links"
