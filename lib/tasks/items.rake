@@ -3,14 +3,13 @@ namespace :items do
 
   task populate: :environment do
 
-    4.times do
+    6.times do
       puts ''
       puts "*"*10
       parent = ItemCategory.create(name: Faker::Commerce.department)
       puts parent.name
-      3.times do
+      4.times do
         category = ItemCategory.create(name: Faker::Commerce.department(1), parent: parent)
-        puts ''
         puts category.name
         rand(5..20).times do
           item_detail = {}
@@ -20,7 +19,6 @@ namespace :items do
             item_detail[Faker::Lorem.word] = Faker::Lorem.sentence
             editorial_review[Faker::Lorem.sentence] = Faker::Lorem.paragraph(6)
           end
-
           Item.create(name: Faker::Commerce.product_name, 
             img: "products/#{rand(1..19)}.jpg",
             item_category: category,
