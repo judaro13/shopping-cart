@@ -18,11 +18,11 @@
           %td
             .input-append
               %input#appendedInputButtons.span1{:placeholder => val, :size => "16", :style => "max-width:34px", :type => "text"}/
-              %button.btn{:type => "button"}
+              = link_to remove_from_cart_path(item_id: item.id), remote: true, class: 'btn'  do
                 %i.icon-minus
-              %button.btn{:type => "button"}
+              = link_to add_to_cart_path(item_id: item.id), remote: true, class: 'btn'  do
                 %i.icon-plus
-              %button.btn.btn-danger{:type => "button"}
+              = link_to remove_from_cart_path(item_id: item.id, count: val), remote: true, class: 'btn'  do
                 %i.icon-remove.icon-white
           %td
             = item.price

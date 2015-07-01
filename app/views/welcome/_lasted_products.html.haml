@@ -3,7 +3,7 @@
   - @lasted_products.each do |item|  
     %li.span3
       .thumbnail
-        = link_to 'product_detail' do 
+        = link_to '#' do 
           = image_tag item.img
         .caption
           %h5
@@ -13,8 +13,8 @@
           %h4{:style => "text-align:center"}
             %a.btn{:href => "product_details.html"}
               %i.icon-zoom-in
-            %a.btn{:href => "#", id: 'add_to_cart', item: item.id.to_s}
+            = link_to add_to_cart_path(item_id: item.id), remote: true, class: 'btn'  do
               Add to
               %i.icon-shopping-cart
-            %a.btn.btn-primary{:href => "#"} 
+            %a.btn.btn-primary{:href => "#"}
               = "$#{item.price}"

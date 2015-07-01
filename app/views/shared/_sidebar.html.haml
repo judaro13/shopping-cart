@@ -9,21 +9,21 @@
         %ul
           -parent_cat.child.each do |child_cat|
             %li
-              %a.active{:href => "products.html"}
+              %a.active{:href => '#'}
                 %i.icon-chevron-right>
                 = "#{child_cat.name} (#{child_cat.count})"
 
   -@deals.each do |item|
     %br/
-    = link_to 'item' do
+    = link_to '#' do
       .thumbnail
         = image_tag item.img, alt:  item.name
         .caption
           %h5
             = item.name
           %h4{:style => "text-align:center"}
-            %a.btn{:href => "#"}
-              Add to 
+            = link_to add_to_cart_path(item_id: item.id), remote: true, class: 'btn'  do
+              Add to
               %i.icon-shopping-cart
             %a.btn.btn-primary{:href => "#"}
               = "$#{item.price}"

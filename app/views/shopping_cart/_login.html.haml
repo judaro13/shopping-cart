@@ -3,20 +3,12 @@
     %th I AM ALREADY REGISTERED
   %tr
     %td
-      %form.form-horizontal
+      = form_for(:user, as: resource_name, url: session_path(resource_name), class: 'form-horizontal loginFrm') do |f|
         .control-group
-          %label.control-label{:for => "inputUsername"} Username
-          .controls
-            %input#inputUsername{:placeholder => "Username", :type => "text"}/
+          = f.email_field :email, autofocus: true, placeholder: "Email"
         .control-group
-          %label.control-label{:for => "inputPassword1"} Password
-          .controls
-            %input#inputPassword1{:placeholder => "Password", :type => "password"}/
-        .control-group
-          .controls
-            %button.btn{:type => "submit"} Sign in
-            OR
-            %a.btn{:href => "register.html"} Register Now!
-        .control-group
-          .controls
-            %a{:href => "forgetpass.html", :style => "text-decoration:underline"} Forgot password ?
+          = f.password_field :password, autocomplete: "off", placeholder: "Password"
+        .actions
+          = f.submit "Log in", class: 'button btn btn-success'
+          OR
+          = link_to 'Register Now!', new_user_registration_path, class: 'btn'
