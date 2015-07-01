@@ -12,13 +12,16 @@ This demo RoR application is about a shopping cart. The main functionalities are
 
 * Integration tests and model tests with Rspec
 
+
 This app is also using a free bootstrap template for e-commerce sites. For a live demo of this app, run as usual:
 
-* Clone the application
+* Clone the application (You need to have on you computer Mongodb )
 
 * Install gems by `bundle install`
 
-* Initialize local server bt `rails s`
+* run task `rake items:populate`
 
-* Check the application on your browser at the address http://localhost:3000
+* Initialize local server by `rails s`
+
+* Check the application in your browser
 
