@@ -8,7 +8,6 @@ class Cart
 
   def add_item(item_id, item_count)
     self.items[item_id.to_s] = self.items[item_id.to_s].to_i + item_count
-
     item = Item.find(item_id) 
     self.count += item_count
     self.total += item.price * item_count
@@ -16,11 +15,15 @@ class Cart
   end
 
   def remove_item(item_id, item_count)
-    self.items[item_id.to_s] = self.items[item_id.to_s].t_i - item_count
-
-    item = Item.find(item_id) 
-    self.count -= item_count
-    self.total -= item.price * item_count
+    item = Item.find(item_id)   
+    total_items = self.items[item_id.to_s].to_i - item_count.to_i
+    if total_items > 0
+      self.items[item_id.to_s] = total_items
+    else
+      self.items.delete(item_id.to_s)
+    end
+    self.count -= item_count.to_i
+    self.total -= item.price * item_count.to_i
     self.save
   end
 

@@ -2,15 +2,15 @@
 
 This demo RoR application is about a shopping cart. The main functionalities are:
 
-* MongoDB database, with populate task for items
+* MongoDB database, with populate task and seed for items
 
 * User authentication with devise
 
 * Shopping cart functionalities for guests users and registered users
 
-* Shopping cart checkout integrated with Stripe
+* Shopping cart checkout integrated with Stripe  (Comming soon)
 
-* Integration tests and model tests with Rspec
+* Integration tests with Rspec
 
 
 This app is also using a free bootstrap template for e-commerce sites. For a live demo of this app, run as usual:
@@ -19,7 +19,7 @@ This app is also using a free bootstrap template for e-commerce sites. For a liv
 
 * Install gems by `bundle install`
 
-* run task `rake items:populate`
+* run task `rake items:populate` or `rake db:seed` for populate with items the db
 
 * Initialize local server by `rails s`
 

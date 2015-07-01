@@ -33,7 +33,10 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'mongoid-rspec'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 

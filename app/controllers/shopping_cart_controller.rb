@@ -7,7 +7,7 @@ class  ShoppingCartController < ApplicationController
 
 
   def remove_from_cart
-    user_add_to_cart(params['item_id'], 1)
+    user_remove_from_cart(params['item_id'], params['count'] || 1)
     respond_to do |format|
       format.js
     end

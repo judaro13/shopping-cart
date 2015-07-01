@@ -27,7 +27,7 @@ module ShoppingCartHelper
     if user_signed_in?
       current_user.cart.count
     else
-      session[:guest_user]['count']
+      session[:guest_user]['count'].to_i
     end
   end
 
