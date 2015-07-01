@@ -1,0 +1,15 @@
+.span9
+  %ul.breadcrumb
+    %li
+      %a{:href => "index.html"} Home
+      %span.divider /
+    %li.active SHOPPING CART
+  %h3
+    SHOPPING CART 
+    = link_to root_path, class: 'btn btn-large pull-right'  do
+      %i.icon-arrow-left
+      Continue Shopping
+  %hr.soft/
+  = login_partial
+  #user-cart-detail
+    = render 'shopping_cart/detail_products'

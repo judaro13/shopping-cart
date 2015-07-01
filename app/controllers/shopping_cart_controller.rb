@@ -2,6 +2,10 @@ class  ShoppingCartController < ApplicationController
   def index
   end
 
+  def cart
+  end
+
+
   def remove_from_cart
     user_add_to_cart(params['item_id'], 1)
     respond_to do |format|
@@ -22,6 +26,10 @@ class  ShoppingCartController < ApplicationController
     else
       session[:guest_user] = {total: 0.0, count: 0}
       session[:guest_cart] = {} 
+    end
+    
+    respond_to do |format|
+      format.js
     end
   end
 

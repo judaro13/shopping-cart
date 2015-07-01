@@ -1,0 +1,22 @@
+%table.table.table-bordered
+  %tr
+    %th I AM ALREADY REGISTERED
+  %tr
+    %td
+      %form.form-horizontal
+        .control-group
+          %label.control-label{:for => "inputUsername"} Username
+          .controls
+            %input#inputUsername{:placeholder => "Username", :type => "text"}/
+        .control-group
+          %label.control-label{:for => "inputPassword1"} Password
+          .controls
+            %input#inputPassword1{:placeholder => "Password", :type => "password"}/
+        .control-group
+          .controls
+            %button.btn{:type => "submit"} Sign in
+            OR
+            %a.btn{:href => "register.html"} Register Now!
+        .control-group
+          .controls
+            %a{:href => "forgetpass.html", :style => "text-decoration:underline"} Forgot password ?

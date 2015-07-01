@@ -1,7 +1,6 @@
 .well.well-small
-  = link_to 'cart', id: 'myCart' do
+  = link_to cart_path, id: 'myCart' do
     = image_tag 'ico-cart.png', alt: 'cart'
-    #user-cart-count
     = "#{user_cart_count} Items"
-    %span.badge.badge-warning.pull-right#user-cart-total
+    %span.badge.badge-warning.pull-right 
       = "$#{user_cart_total}"

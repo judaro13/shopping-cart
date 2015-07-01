@@ -1,0 +1,48 @@
+- if user_cart_count > 0 
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Product
+        %th Description
+        %th Quantity/Update
+        %th Price
+        %th Total
+    %tbody
+      - user_cart.each do |key, val|
+        - item = user_item(key)
+        %tr
+          %td
+            = image_tag item.img, width: 60
+          %td
+            = item.name
+          %td
+            .input-append
+              %input#appendedInputButtons.span1{:placeholder => val, :size => "16", :style => "max-width:34px", :type => "text"}/
+              %button.btn{:type => "button"}
+                %i.icon-minus
+              %button.btn{:type => "button"}
+                %i.icon-plus
+              %button.btn.btn-danger{:type => "button"}
+                %i.icon-remove.icon-white
+          %td
+            = item.price
+          %td
+            = item_price(item, val)
+      
+      %tr
+        %td{:colspan => "3"}
+          = link_to 'Remove all', clean_cart_path, remote: true
+        %td{:style => "text-align:right"}
+          %strong TOTAL
+        %td.label.label-important{:style => "display:block"}
+          %strong
+            = user_cart_total
+  = link_to root_path, class: 'btn btn-large' do
+    %i.icon-arrow-left
+    Continue Shopping
+  = link_to checkout_path, class: 'btn btn-large pull-right' do
+    Checkout
+    %i.icon-arrow-right
+- else
+  %h4
+    You don't have any items in your cart
