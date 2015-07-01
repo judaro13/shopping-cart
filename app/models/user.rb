@@ -42,4 +42,8 @@ class User
     self.cart = Cart.create if cart.nil?
   end
 
+  def add_items_from_guest(guest_cart)
+    guest_cart.each{|k,v| self.cart.add_item(k,v)}
+  end
+
 end
