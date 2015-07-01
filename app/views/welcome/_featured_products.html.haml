@@ -19,7 +19,8 @@
                     %h5
                       = item.name
                     %h4
-                      %a.btn{:href => "#", alt: 'Add to Cart'}
+                      = link_to add_to_cart_path(item_id: item.id), remote: true, class: 'btn'  do
+                        Add to
                         %i.icon-shopping-cart
                       %a.btn.btn-primary{:href => "#"}
                         = "$#{item.price}"
