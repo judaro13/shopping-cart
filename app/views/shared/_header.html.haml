@@ -2,25 +2,9 @@
   .container
     #welcomeLine.row
       .span6
-        Welcome!
+        Hi
         %strong 
-          =  user_signed_in? ? current_user.first_name : 'User'
-      .span6
-        .pull-right
-          %a{:href => "product_summary.html"}
-            %span Fr
-          %a{:href => "product_summary.html"}
-            %span Es
-          %span.btn.btn-mini En
-          %a{:href => "product_summary.html"}
-            %span £
-          %span.btn.btn-mini $155.00
-          %a{:href => "product_summary.html"}
-            %span $
-          %a{:href => "product_summary.html"}
-            %span.btn.btn-mini.btn-primary
-              %i.icon-shopping-cart.icon-white
-              [ 3 ] Itemes in your cart
+          =  user_signed_in? ? current_user.first_name : 'Guest'
     
     = render 'shared/nav_bar'
     = render 'shared/messages'

@@ -1,5 +1,6 @@
 #sidebar.span3
-  = render 'shared/sidebar_cart'
+  #user-shopping-cart
+    = render 'shared/sidebar_cart'
   %ul#sideManu.nav.nav-tabs.nav-stacked
     - ItemCategory.where(parent: nil).each do |parent_cat|
       %li.subMenu

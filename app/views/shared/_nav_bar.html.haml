@@ -6,26 +6,26 @@
   .navbar-inner
     = link_to root_path, class: 'brand' do
       = image_tag 'logo.png', alt: 'Boots'
-    %form.form-inline.navbar-search{:action => "products.html", :method => "post"}
-      %input#srchFld.srchTxt{:type => "text"}/
-      %select.srchTxt
-        %option All
-        %option CLOTHES
-        %option FOOD AND BEVERAGES
-        %option HEALTH & BEAUTY
-        %option SPORTS & LEISURE
-        %option BOOKS & ENTERTAINMENTS
-      %button#submitButton.btn.btn-primary{:type => "submit"} Go
+    / %form.form-inline.navbar-search{:action => "products.html", :method => "post"}
+    /   %input#srchFld.srchTxt{:type => "text"}/
+    /   %select.srchTxt
+    /     %option All
+    /     %option CLOTHES
+    /     %option FOOD AND BEVERAGES
+    /     %option HEALTH & BEAUTY
+    /     %option SPORTS & LEISURE
+    /     %option BOOKS & ENTERTAINMENTS
+    /   %button#submitButton.btn.btn-primary{:type => "submit"} Go
     %ul#topMenu.nav.pull-right
-      %li
-        %a{:href => "special_offer.html"} Specials Offer
-      %li
-        %a{:href => "normal.html"} Delivery
-      %li
-        %a{:href => "contact.html"} Contact
+      / %li
+      /   %a{:href => "special_offer.html"} Specials Offer
+      / %li
+      /   %a{:href => "normal.html"} Delivery
+      / %li
+      /   %a{:href => "contact.html"} Contact
       %li
         - if user_signed_in?
-          = link_to destroy_user_session_path, :method => :delete do
+          = link_to destroy_user_session_path do
             %span.btn.btn-large.btn-success Logout
         -else 
           %a{"data-toggle" => "modal", :href => "#login", :role => "button", :style => "padding-right:0"}
