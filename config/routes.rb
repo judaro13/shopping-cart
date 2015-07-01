@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  root 'shopping_cart#index'
+  root 'welcome#index'
   devise_for :users, :controllers => {:registrations => "registrations"}
+
+  get 'add_to_cart', to: 'shopping_cart#add_to_cart'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
