@@ -1,0 +1,16 @@
+.span9
+  %ul.breadcrumb
+    %li
+      %a{:href => "index.html"} Home
+      %span.divider /
+      %li.active Login
+    %hr.soft/
+    = form_for(:user, as: resource_name, url: session_path(resource_name), class: 'form-horizontal loginFrm') do |f|
+      .control-group
+        = f.email_field :email, autofocus: true, placeholder: "Email"
+      .control-group
+        = f.password_field :password, autocomplete: "off", placeholder: "Password"
+      .actions
+        = f.submit "Log in", class: 'button btn btn-success'
+        OR
+        = link_to 'Register Now!', new_user_registration_path, class: 'btn'
